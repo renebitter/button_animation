@@ -1,0 +1,65 @@
+a {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+/*     transition: all 0.5s; */
+    cursor: pointer;
+/*     -webkit-transition-duration: 0.4s; /* Safari */ */
+/*     transition-duration: 0.4s; */
+
+}
+
+
+.button {
+  padding: 15px;
+  width: 150px;
+  margin: 5px;
+}
+
+.button1:hover {
+    background-color: #000;
+    color: white;
+}
+
+.button2 {
+  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
+  background-position 0 0;
+  background-size: 100% 200%;
+  transition: all .2s ease-in;
+}
+
+.button2:hover{
+  color: #fff;
+  background-position: 0 -100%;
+}
+
+.button3 {
+  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
+  background-position 0 0;
+  background-size: 100% 200%;
+  transition: all .2s ease-in;
+}
+
+.button3:hover{
+  color: #fff;
+  background-color: black;
+}
+
+.button4 {
+  position: relative;
+  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
+  background-position 0 0;
+  background-size: 100% 200%;
+  transition: all .2s ease-in;
+}
+
+.button4:hover{
+  position: absolute;
+  color: #fff;
+  background-position: bottom;
+}
