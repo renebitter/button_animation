@@ -30,6 +30,9 @@
  .button2 {
      background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
      background-size: 100% 200%;
+     -webkit-transition: all 0.3s ease 0s !important;
+     -moz-transition: all 0.3s ease 0s !important;
+     -o-transition: all 0.3s ease 0s !important;
      transition: all 0.3s ease 0s !important;
     /*Damit es schneller aussieht wie im Video*/
 }
@@ -103,3 +106,4 @@
      transform: translateX(-50%) translateY(-50%) scaleY(3.5) rotate(25deg);
 }
 /*---/Einzelne Zuweisungen für Button 3 und 4/---*/
+ 
