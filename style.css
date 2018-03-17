@@ -1,67 +1,105 @@
-a {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-/*     transition: all 0.5s; */
-    cursor: pointer;
-/*     -webkit-transition-duration: 0.4s; /* Safari */ */
-/*     transition-duration: 0.4s; */
-
+/*Zentralisierung*/
+ .flex-container{
+     display: flex;
+     display: -webkit-box;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
 }
-
-/*test*/
-
-
-.button {
-  padding: 15px;
-  width: 150px;
-  margin: 5px;
+/*Allgemeine Button Eigenschaften*/
+ a.button {
+     padding: 15px 30px;
+     margin: 5px;
+     border: 2px solid #000;
+     width: 150px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 0.9em;
+     font-weight: bold;
 }
-
-.button1:hover {
-    background-color: #000;
-    color: white;
+ .button1{
+     transition: none !important;
+    /*Ausnahme, da im Video keine transition zu erkennen war*/
 }
-
-.button2 {
-  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
-  background-position 0 0;
-  background-size: 100% 200%;
-  transition: all .2s ease-in;
+ .button1:hover {
+     background-color: #000;
+     color: white;
 }
-
-.button2:hover{
-  color: #fff;
-  background-position: 0 -100%;
+ .button2 {
+     background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
+     background-size: 100% 200%;
+     transition: all 0.3s ease 0s !important;
+    /*Damit es schneller aussieht wie im Video*/
 }
-
-.button3 {
-  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
-  background-position 0 0;
-  background-size: 100% 200%;
-  transition: all .2s ease-in;
+ .button2:hover{
+     color: #fff;
+     background-position: 0 -100%;
 }
-
-.button3:hover{
-  color: #fff;
-  background-color: black;
+ a.button:link:after, a.button:visited:after {
+     content: "";
+    /*Das Rechteck*/
+     position: absolute;
+     height: 0%;
+    /*Rechteck-Grösse in Anfangsposition*/
+    /*left: muss einzeln zugewiesen werden*/
+     top: 50%;
+    /*Rechteck-Position in Bezug auf Top - 50%=Mitte*/
+     width: 100%;
+    /*Länge des Rechtecks*/
+     z-index: -1;
+    /*Rechteck auf unterste Schicht - Text bleibt drüber*/
+    /*Browser Support - Animation/Transition für das Rechteck*/
+     -webkit-transition: all 0.75s ease 0s;
+     -moz-transition: all 0.75s ease 0s;
+     -o-transition: all 0.75s ease 0s;
+     transition: all 0.75s ease 0s;
 }
-
-.button4 {
-  position: relative;
-  background-image: linear-gradient(transparent, transparent 50%, #000 50%, #000);
-  background-position 0 0;
-  background-size: 100% 200%;
-  transition: all .2s ease-in;
+ a.button:link:hover, a.button:visited:hover {
+     color: #FFF;
 }
-
-.button4:hover{
-  position: absolute;
-  color: #fff;
-  background-position: bottom;
+ a.button:link:hover:after, a.button:visited:hover:after {
+     height: 290%;
+    /*Höhe des Rechtecks bei Hover in Bezug auf Border*/
 }
+ a.button:link, a.button:visited {
+     position: relative;
+    /*Rechteck Animation bleibt innerhalb der Border*/
+     color: #000;
+     text-align: center;
+     text-decoration: none;
+     overflow: hidden;
+    /*Damit das Rechteck nicht über die Button-Border fliesst sowie der Text*/
+    /* Browser Support - Ease für Text */
+     -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+     -o-transition: all 0.5s ease;
+     transition: all 0.5s ease;
+}
+/*---Einzelne Zuweisungen für Button 3 und 4---*/
+ a.button3:link:after, a.button3:visited:after {
+     left: 0%;
+    /*Rechteck-Position in Bezug auf Links - 0%=Startet von links*/
+}
+ a.button4:link:after, a.button4:visited:after {
+     left: 50%;
+    /*Rechteck-Position in Bezug auf Links - 50%=Mitte*/
+}
+ a.button3:after {
+     background: #000;
+    /* Browser Support - Animation mit Winkel-Rotation des Rechtecks*/
+     -moz-transform: translateX(-100%) translateY(-50%) scaleX(4.7) scaleY(2.5) rotate(55deg);
+     -ms-transform: translateX(-100%) translateY(-50%) scaleX(4.7) scaleY(2.5) rotate(55deg);
+     -webkit-transform: translateX(-100%) translateY(-50%) scaleX(4.7) scaleY(2.5) rotate(55deg);
+     transform: translateX(-100%) translateY(-50%) scaleX(4.5) scaleY(2.5) rotate(55deg);
+}
+ a.button4:after {
+     background: #000;
+    /* Browser Support - Animation mit Winkel-Rotation des Rechtecks*/
+     -moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+     -ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+     -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+     transform: translateX(-50%) translateY(-50%) scaleY(3.5) rotate(25deg);
+}
+/*---/Einzelne Zuweisungen für Button 3 und 4/---*/
