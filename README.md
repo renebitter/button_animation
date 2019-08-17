@@ -1,3 +1,3 @@
 # button_animation
 
-https://simple-css-button-animation.netlify.com/
+https://renebitter.github.io/button_animation/
